@@ -1,0 +1,25 @@
+
+{% autoescape off %}
+    
+Hi,
+
+Thank you for signing up! Please verify your email address to activate your account.
+
+Please verify your account by clicking the link below to complete your verification:
+
+http://{{ domain }}{% url 'email-verification' uidb64=uid token=token %}
+
+If you did not request this, you can safely ignore this email.
+
+Thank you,
+The Nimorathought Team
+
+{% endautoescape %}
+
+
+
+
+
+
+
+

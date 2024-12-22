@@ -1,0 +1,35 @@
+{% load static %}
+
+<html>
+
+    <head>
+
+        <title> Nimorathought | Email Verification </title>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
+          <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+          <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+    </head>
+
+    <br> <br>
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+
+        <h3 class="text-center"> Verification Failed ! </h3>
+        <br>
+        <h2 class="text-center"> ❌ </h2>
+        <hr>
+        <p class="text-center"> 
+            We're sorry, but your email verification was unsuccessful.
+            Please try verifying your email again.
+        </p>
+        <br>
+        <a class="btn btn-info w-100" style="border-radius: 50px;" href="{% url 'register' %}"> Recreate your account </a>
+
+    </div>
+
+
+
+</html>
+

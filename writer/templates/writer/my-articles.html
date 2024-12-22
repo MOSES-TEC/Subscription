@@ -1,0 +1,49 @@
+{% extends 'writer/navbar.html' %}
+
+{% block content %}
+    
+    <br> <br>
+    <div class="container">
+        <div class="row">
+
+            {% for article in AllArticles %}
+                <div class="col-md-6 mb-4">
+                    <div class="container bg-white shadow-md p-5 form-layout h-100" style="max-height: 500px; overflow-y: auto; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 50px;">
+                        <h3> {{article.title}} </h3>
+                        <br>
+
+                        <p> {{article.content|linebreaks}} </p>
+                        <br> <br>
+                        <hr> 
+                        Date posted: {{article.date_posted}}
+                        <br> <br>
+
+                        {% if article.is_premium == True %}
+                            👑<strong> Premium </strong>
+                        {% elif article.is_premium == False %}
+                            📝<strong> Standard </strong>
+                        {% endif %}
+                        <hr> <br>
+
+                        <a class="btn btn-info me-3" style="border-radius: 50px;" href="{% url 'update-article' article.id %}"> Update Article </a>
+                        <!-- &nbsp; &nbsp; &nbsp; -->
+                        <a class="btn btn-danger" style="border-radius: 50px;" href="{% url 'delete-article' article.id %}"> Delete Article </a>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:2 %}
+                    </div> <br> <br> <div class="row">
+                {% endif %}
+            {% endfor %}
+            
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+
+
+
+
+
+

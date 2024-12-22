@@ -1,0 +1,54 @@
+{% load static %}
+<html>
+
+    <head>
+
+        <title> Nimorathought | Client </title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+    </head>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+
+        <a class="navbar-brand main-heading" href="">        
+          &nbsp; Nimorathought
+        </a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+          <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+    
+              <li class="nav-item">
+                <a class="btn btn-secondary navbar-btn" type="button"  href="{% url 'client-dashboard' %}"> Dashboard </a>
+              </li>
+    
+              <li class="nav-item">
+                <a class="btn btn-secondary navbar-btn" type="button"  href="{% url 'browse-articles' %}"> Browse articles </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="btn btn-secondary navbar-btn" type="button"  href="{% url 'account-management-client' %}"> Account management </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="btn btn-secondary navbar-btn" type="button"  href="{% url 'user-logout' %}"> Logout </a>
+              </li>
+    
+            </ul>
+
+          </div>
+    </nav>
+
+    {% block content %}
+        
+    {% endblock content %}
+
+
+</html>

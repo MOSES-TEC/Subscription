@@ -1,0 +1,36 @@
+{% extends 'client/navbar.html' %}
+
+
+{% block content %}
+<br> <br>
+    <div class="container bg-white shadow-md p-5 form-layout text-center">
+        <h5> PayPal update confirmation! </h5>
+        <hr>
+        <h1> ✅ </h1>
+        <br>
+        <p> 
+            Your request to update your subscription has been confirmed on PayPal!
+        </p>
+        <br>
+        <a class="btn btn-info w-100" style="border-radius: 50px;" type="button" href="{% url 'django-update-sub-confirmed' SubscriptionID %}"> 
+            Confirm approval for update 
+        </a>
+
+    </div>
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

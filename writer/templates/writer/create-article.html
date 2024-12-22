@@ -1,0 +1,24 @@
+{% extends 'writer/navbar.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    
+    <br>
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h3 class="text-center"> Create an article </h3>
+        <hr>
+        <p class="text-center"> As a writer you can post both standard and premium articles down below: </p>
+        <br>
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            {{CreateArticleForm|crispy}}
+            <br>
+            <div style="text-align: center;">
+                <input class="btn btn-success w-100" style="border-radius: 50px;" type="submit" value="Create article">
+            </div>
+        </form>
+    </div>
+    <br>
+
+{% endblock content %}
+
